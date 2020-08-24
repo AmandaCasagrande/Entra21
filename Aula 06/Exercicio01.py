@@ -19,3 +19,4 @@ elif (valorVenda >= 50000.01) and (valorVenda <= 100000.00):
     print("Comissão: ", comissao)
 elif (valorVenda > 100000.00):
     comissao = valorVenda * (3.5/100)
+    print("Comissão: ", comissao)
