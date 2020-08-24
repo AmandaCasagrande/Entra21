@@ -42,11 +42,13 @@ elif (entrada == 'B') or (entrada == 'b'):
 elif (entrada == 'C') or (entrada == 'c'):
     num1 =  float(input("Digite um número: "))
     num2 = float(input("Digite outro número: "))
-    divisao = num1/num2
-    print("Divisão = ", divisao)
-    print("Média = ", media)
-    if (divisao == 0):
+    if (num2 == 0):
         print("Erro! Não pode dividir por ZERO!")
+    else:
+        divisao = num1/num2
+        print("Divisão = ", divisao)
 
 elif (entrada == 'D') or (entrada == 'd'):
     print("Muito obrigada e volte sempre!")
+else:
+    print("Caracter inválido. Tente novamente!")
