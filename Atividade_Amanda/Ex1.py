@@ -6,23 +6,40 @@
 #---       a função deve retornar uma mensagem caso a idade informada seja menor que 18
 #---       caso a pessoa tenha sido cadastrada com sucesso deve ser retornado um id 
 #--- A função deve ser salva em um arquivo diferente do arquivo principal onde será chamada
+#--- Exercício 3  - Funções
+#--- Escreva uma função para listar pessoas cadastradas:
+#---    a função deve retornar todas as pessoas cadastradas na função do ex1
+#--- Escreva uma função para exibir uma pessoa específica:
+#        a função deve retornar uma pessoa cadastrada na função do ex1 filtrando por id
 
-#Variavel Global;
-listaPessoas = []
+# pessoa = {"id": id, "nome": nome, "sobrenome" : sobrenome}}
+# pessoas = [pessoa1, pessoa2]
 
-#Função para Cadastrar Dados Pessoais;
-def cadastroPessoa(idPessoa, nome, sobrenome, idade) -> str:
+pessoas = []
+id_pessoa = 0
 
-    #Validação de dados;
-    if (idade < 18):
-        return "Idade não permitida! Cadastro apenas para +18."
-    elif (idade >= 18):
-        return "Dados pessoais cadastrados com sucesso!"
+def cadastro_Pessoa(nome, sobrenome, idade):
+    global id_pessoa
+    id_pessoa += 1
+    pessoa = {"id_pessoa": id_pessoa}
+    pessoa['nome'] = nome
+    pessoa['sobrenome'] = sobrenome
+    pessoa['idade'] = idade
+    pessoas.append(pessoa)
+    return id_pessoa
+         
+def mostrar_Dados():
+    for i in pessoas:
+        print(f"ID: {i['id_pessoa']}")
+        print(f"Nome: {i['nome']}")
+        print(f"Sobrenome: {i['sobrenome']}")
+        print(f"Idade: {i['idade']}")
 
-    #Adiciona Endereço na lista;
-    pessoa = {"ID": idPessoa, "Nome": nome, "Sobrenome": sobrenome, "Idade": idade}
-    listaPessoas.append(pessoa)
-    return "ID"
-
-    #Adicionar Códigos com função da Luana rsrsrs
-    
+def pesquisa_Pessoa():
+    id_especifico = int(input("Insira o ID a ser pesquisado: "))
+    if (id_especifico < len(pessoas) or id_especifico > 0):
+        if id_pessoa == id_especifico:
+            mostrar_Dados()
+        else:
+            print("Id não encontrado")
+            
