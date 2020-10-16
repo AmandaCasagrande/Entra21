@@ -44,11 +44,6 @@ def menu():
     \t 4. Listar e sair
 
         Insira a opção escolhida: """))
-        
-        """
-        if (opcao < 1 or opcao > 4):
-            opcao = input("Entrada inválida! Digite novamente: ")
-        else:"""
 
         if (opcao == 1):
             cabecalho("PESSOA")
@@ -68,7 +63,7 @@ def menu():
             if (idade < 18):
                 print("Cadastro negado, menor de 18 anos")
             else: 
-                cadastro_Pessoa(nome,sobrenome,idade)
+                cadastro_Pessoa(nome, sobrenome, idade)
                 cabecalho("ENDEREÇO")
 
                 rua = input("Rua: ")
@@ -94,7 +89,7 @@ def menu():
                 estado = input("Estado: ")
                 while(not estado):
                     estado = input("Campo 'Estado' vazio!\nCidade: ")
-                cadastro_Endereco(rua,numero,comp,bairro,cidade,estado)
+                cadastro_Endereco(rua, numero, comp, bairro, cidade, estado)
 
         elif (opcao == 2):
             pesquisa("ID")
@@ -108,5 +103,5 @@ def menu():
             lista()
             print("\nDADOS: ")
             mostrar_Dados()
-            mostrar_Dados()
+            mostrar_Endereco()
 menu()

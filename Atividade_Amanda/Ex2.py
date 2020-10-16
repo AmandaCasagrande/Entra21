@@ -27,6 +27,13 @@ def cadastro_Endereco(rua, numero, comp, bairro, cidade, estado):
     endereco['bairro'] = bairro
     endereco['cidade'] = cidade
     endereco['estado'] = estado
+
+    #Gera arquivo txt
+    cadastro = {"rua": rua, "numero": numero, "comp": comp, "bairro": bairro, "cidade": cidade, "estado": estado}
+    arq_Enderecos = open('cadastro.txt', 'a')
+    arq_Enderecos.write(f"\n\nEndereço: {cadastro['rua']}, {cadastro['numero']} {cadastro['comp']}\nBairro: {cadastro['bairro']}\nCidade: {cadastro['cidade']} - {cadastro['estado']}")
+    arq_Enderecos.close()
+
     enderecos.append(endereco)
     return id_pessoa
 
