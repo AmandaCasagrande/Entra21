@@ -27,7 +27,7 @@ def cadastro_Endereco(rua, numero, comp, bairro, cidade, estado):
     endereco['bairro'] = bairro
     endereco['cidade'] = cidade
     endereco['estado'] = estado
-
+    
     #Gera arquivo txt
     cadastro = {"rua": rua, "numero": numero, "comp": comp, "bairro": bairro, "cidade": cidade, "estado": estado}
     arq_Enderecos = open('cadastro.txt', 'a')
@@ -50,6 +50,11 @@ def mostrar_Endereco():
 def pesquisa_Endereco():
     endereco_especifico = int(input("Insira o ID do endereço a ser pesquisado: "))
     if id_pessoa == endereco_especifico:
+        arq_Pessoa = open('cadastro.txt', 'r')
+        for i in arq_Pessoa:
+            mostrar_Dados = i.split(';')
+            mostrar_Dados()
+        arq_Pessoa.close()
         mostrar_Endereco()
     else:
         print("Id não encontrado")

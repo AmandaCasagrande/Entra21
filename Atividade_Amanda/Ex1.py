@@ -34,7 +34,7 @@ def cadastro_Pessoa(nome, sobrenome, idade):
 
     pessoas.append(pessoa)
     return id_pessoa
-         
+        
 def mostrar_Dados():
     for i in pessoas:
         print(f"ID: {i['id_pessoa']}")
@@ -44,8 +44,14 @@ def mostrar_Dados():
 
 def pesquisa_Pessoa():
     id_especifico = int(input("Insira o ID a ser pesquisado: "))
+
     if (id_especifico < len(pessoas) or id_especifico > 0):
         if id_pessoa == id_especifico:
+            arq_Pessoa = open('cadastro.txt', 'r')
+            for i in arq_Pessoa:
+                mostrar_Dados = i.split(';')
+                mostrar_Dados()
+            arq_Pessoa.close()
             mostrar_Dados()
         else:
             print("Id não encontrado")
