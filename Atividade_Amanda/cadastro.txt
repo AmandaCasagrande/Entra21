@@ -6,4 +6,20 @@ Idade: 19
 
 Endereço: Joao e Maria, 133 Ap. 203
 Bairro: Fortaleza
-Cidade: Blumenau - SC
+Cidade: Blumenau - SCArquivo txt
+ID: 1
+Nome: Amanda
+Sobrenome: Casagrande
+Idade: 24
+
+Endereço: Wald, 131 A
+Bairro: B
+Cidade: C - DArquivo txt
+ID: 2
+Nome: Luiz
+Sobrenome: Edu
+Idade: 28
+
+Endereço: W, E R
+Bairro: T
+Cidade: Y - U

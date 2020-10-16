@@ -28,9 +28,10 @@ def cadastro_Pessoa(nome, sobrenome, idade):
 
     #Gera arquivo txt
     cadastro = {"id_pessoa": id_pessoa, "nome": nome, "sobrenome": sobrenome, "idade": idade}
-    arq_Pessoa = open('cadastro.txt', 'w')
+    arq_Pessoa = open('cadastro.txt', 'a')
     arq_Pessoa.write(f"Arquivo txt\nID: {cadastro['id_pessoa']}\nNome: {cadastro['nome']}\nSobrenome: {cadastro['sobrenome']}\nIdade: {cadastro['idade']}")
     arq_Pessoa.close()
+
 
     pessoas.append(pessoa)
     return id_pessoa
